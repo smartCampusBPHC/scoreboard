@@ -26,7 +26,22 @@
 </div>
 
 <form method="post">
-  <div class="form-group" >
+<div class="container-fluid" > 
+      <div  id="grade" class="">{{ grades['grade'] }}</div>
+      <div id="buttonarea">
+        <table border="0" class="table">
+          {% for o in params %}
+        <tr>
+        <td>
+          <form method="post">
+            <button class="button_style" name="d" value="{{o}}"> {{o}}</button>
+        </td>
+        </tr>
+{% endfor %}
+
+
+</form>
+<!--   <div class="form-group" >
   	<select name="sports_drop" multiple="multiple" size = "12"  class="form-control" >
 	    <option value="Cricket">Cricket</option>
 	    <option value="Football">Football</option>
@@ -59,8 +74,7 @@
   	<textarea class="form-control" rows="1" id="team1" name="disp_score">0-0</textarea>        
   </div>  
   <button type="submit" class="btn btn-success">Submit</button>
-</form>
-
-
+ -->
+ </form>
 </body>
 </html>
