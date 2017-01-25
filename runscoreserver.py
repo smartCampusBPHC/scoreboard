@@ -81,10 +81,9 @@ dict = {'Sports':'-1' ,'MatchNumber':'-1','Gender':'M','Team1':'BPHC','Team2':'-
 def main_updater():
 	if request.method == 'POST':
 		d = request.method['selected_element']
-		
+		print d
 
-    return render_template('score_updater.html', params = Matrix)
-
+	return render_template('score_updater.html', params = Matrix)
 
 @app.route('/tvscreen', methods=['GET', 'POST'])
 def screen_tv_show():

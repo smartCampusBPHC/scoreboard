@@ -24,20 +24,23 @@
     <p>Made with <span style="font-size:100%;color:red;">&hearts;</span> by SmartCampus, BPHC</p>
   </div>
 </div>
-
-<form method="post">
-<div class="container-fluid" > 
-      <div  id="grade" class="">{{ grades['grade'] }}</div>
       <div id="buttonarea">
         <table border="0" class="table">
-          {% for o in params %}
+        {% for i in params%}
         <tr>
+        {% for x in i%}
         <td>
-          <form method="post">
-            <button class="button_style" name="d" value="{{o}}"> {{o}}</button>
+        
+        <form method="post">
+            <button class="button_style" name="selected_element" value="[{{i}}]+[{{x}}]">{{x}}
+            </button>
+        {% endfor %}
         </td>
+
+        {% endfor %}
+        
         </tr>
-{% endfor %}
+
 
 
 </form>
