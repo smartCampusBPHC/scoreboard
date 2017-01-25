@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet"	type="text/css" href="/static/css/bootstrap.min.css">
+	
+	<script>
+		$(document).ready(function(){
+		    $('[data-toggle="popover"]').popover();   
+		});
+	</script>
+
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>ARENA 2017 Scorecard Admin</h1>      
+    <p>Made with <span style="font-size:100%;color:red;">&hearts;</span> by SmartCampus, BPHC</p>
+  </div>
+</div>
+
+<form>
+  <div class="form-group">
+  	<select name="sports_drop" multiple="multiple" size = "12"  class="form-control" >
+	    <option value="Cricket">Cricket</option>
+	    <option value="Football">Football</option>
+	    <option value="Basketball_F">Basketball(F)</option>
+	    <option value="Basketball_M">Basketball(M)</option>
+	    <option value="Table_Tennis_M">Table Tennis(M)</option>
+	    <option value="Table_Tennis_F">Table Tennis(F)</option>
+	    <option value="Tennis_M">Tennis(M)</option>
+	    <option value="Tennis_F">Tennis(F)</option>
+	    <option value="Badminton_M">Badminton(M)</option>
+	    <option value="Badminton_F">Badminton(F)</option>
+	    <option value="Volleyball_M">Volleyball(M)</option>
+	    <option value="Volleyball_M">Volleyball(M)</option>
+	    <option value="Hockey">Hockey</option>
+	</select>
+	<br>
+
+    <select name="sports_drop" multiple class="form-control">
+	    <option value="Ongoing" selected="selected">Ongoing</option>
+	    <option value="Final_Result">Final Results</option>
+	</select>
+	<br>
+	
+	<label for="team1">Team 1 : </label>
+  	<textarea class="form-control" rows="1" id="team1" name="team1">BPHC</textarea>
+    <label for="team1">Team 2 : </label>
+  	<textarea class="form-control" rows="1" id="team1" name="team2">AWAY</textarea>
+
+  	<label for="Score">Score to be displayed: </label>
+  	<textarea class="form-control" rows="1" id="team1" name="disp_score">0-0</textarea>        
+  </div>  
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+
+</body>
+</html>
