@@ -83,11 +83,13 @@ def input_page():
 
 	if request.method == 'POST':
 		d = request.form['change_']
-		print ("well=" + d)
-		print("9chell = "+ str(change_location))
-		x = int(change_location%10 -1) 
-		y = int(change_location/10 -1)
-		print("qchell = "+ str(change_location))
+
+		y = int(change_location%10 -1) 
+		x = int(change_location/10 -1)
+		
+		print ("well=" + str(x))
+		print("9chell = "+ str(y))
+
 		Matrix[x][y] = str(d)
 	# count = 0
 	return redirect(url_for('main_updater'))
