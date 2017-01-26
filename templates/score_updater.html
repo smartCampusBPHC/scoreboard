@@ -26,15 +26,20 @@
 </div>
       <div id="buttonarea">
         <table border="0" class="table">
-        {% for i in params%}
+        
+        {% for i in params %}
+        {% set loop_out = loop %}
         <tr>
-        {% for x in i%}
+        {% for x in i %}
         <td>
         
+        
         <form method="post">
-            <button class="button_style" name="selected_element" value="[{{i}}]+[{{x}}]">{{x}}
+            <button class="button_style" name="dhtml" value="{{loop_out.index}}{{loop.index}}">{{x}}
             </button>
+        
         {% endfor %}
+        
         </td>
 
         {% endfor %}

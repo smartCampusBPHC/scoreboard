@@ -7,7 +7,7 @@ import requests
 from collections import deque
 from tempfile import NamedTemporaryFile
 import shutil
-from flask import Flask,request ,render_template
+from flask import Flask,request ,render_template, redirect, url_for
 from numpy import genfromtxt
 
 app=Flask(__name__)
@@ -53,7 +53,8 @@ Matrix[4][3] = '21-11, 21-3'
 Matrix[4][4] = '12-1,12-6,12-2'
 Matrix[4][5] = '12-1,12-6,12-2'
 
-
+#Change_value
+change_location = 00
 
 
 #live_scores = genfromtxt('my_file.csv', delimiter=',')
@@ -77,21 +78,39 @@ dict = {'Sports':'-1' ,'MatchNumber':'-1','Gender':'M','Team1':'BPHC','Team2':'-
 
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/update', methods=['GET', 'POST'])
 def main_updater():
+	global change_location
+	
 	if request.method == 'POST':
-		d = request.method['selected_element']
-		print d
-
+		d = request.form['dhtml']
+		change_location = int(d)
+		#print d
+		return redirect(url_for('input_page'))
+	# count = 0
 	return render_template('score_updater.html', params = Matrix)
+
+@app.route('/input',methods=['GET','POST'])
+def input_page():
+	global change_location
+	if request.method == 'GET':
+		return render_template('input_page.html')
+
+	if request.method == 'POST':
+		d = request.form['change_']
+		print ("well=" + d)
+		print("9chell = "+ str(change_location))
+		x = int(change_location%10 -1) 
+		y = int(change_location/10 -1)
+		print("qchell = "+ str(change_location))
+		Matrix[x][y] = str(d)
+	# count = 0
+	return redirect(url_for('main_updater'))
 
 @app.route('/tvscreen', methods=['GET', 'POST'])
 def screen_tv_show():
     return render_template('screen_tv.html')
 
-@app.route('/updater', methods=['GET','POST'])
-def main_xx():
-    return 0
 
 # @app.route('/login', methods=['GET', 'POST'])
 # def login():
