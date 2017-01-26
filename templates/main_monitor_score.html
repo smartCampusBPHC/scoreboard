@@ -108,7 +108,8 @@
 				<td class="col-md-3">
 				<div>
 					{% for z in o %}
-					{{z}}<br>
+					{{z}} 
+					{% if loop.index != 3 and loop.index != 4 %} <br>{% endif %}
 					{% endfor %}
 					<br>
 				</div>
