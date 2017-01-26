@@ -13,7 +13,7 @@ from numpy import genfromtxt
 app=Flask(__name__)
 
 #Hardcore declaration of array with intial state given
-w, h = 6 ,6 
+w, h = 6 ,12 
 Matrix = [[0 for x in range(w)] for y in range(h)]
 #Sports Names
 Matrix[0][0] = 'Cricket'
